@@ -1,0 +1,159 @@
+.big-search {
+	margin-top: 14%;
+	margin-right: 15%;
+	margin-left: 15%;
+	margin-bottom: 10%;
+	text-align: center;
+}
+
+.footer {
+	padding-top: 40px;
+	padding-bottom: 30px;
+	margin-top: 30px;
+	border-top: 1px solid #eee;
+	font-size: 15px;
+}
+
+.main-search {
+	height: 50px;
+}
+
+.navbar-form .form-control {
+	width: 400px;
+	height: 40px;
+}
+
+.big-button {
+	font-size: 170%;
+}
+
+.nav-button {
+	font-size: 125%;
+}
+
+.make-one-space {
+	padding-bottom: 1%;
+}
+
+.make-space {
+	padding-bottom: 3%;
+}
+
+.make-more-space {
+	padding-bottom: 4%;
+}
+
+.image-space {
+	padding-bottom: 14%;
+}
+
+.info-space {
+	padding-bottom: 2.5%;
+}
+
+.header {
+	height: 7%;
+}
+
+.big-text {
+	font-size: 24px;
+}
+
+.grey {
+	color: rgb(150,150,150);
+}
+
+.one-line {
+	display:inline-block;
+	width: 500px;
+}
+
+.side-font {
+	font-size: 18px;
+}
+
+.small-side-font {
+	font-size: 16px;
+}
+
+.right-sidebar {
+	margin-left: 0%;
+	margin-top: 2%;
+}
+
+.right-sidebar-image {
+	margin-left: 0%;
+	margin-top: 3%;
+}
+
+.tab {
+	padding-left: 15%;
+}
+
+.small-tab {
+	padding-left: 5%;
+}
+
+.nutrition-title {
+	font-size: 20px;
+}
+
+.nutrition-font {
+	font-size: 15px;
+}
+
+.green-bar {
+	border-top: 5px solid green;
+}
+
+.black-bar {
+	border-top: 5px solid black;
+}
+
+.results-font {
+	font-size: 20px;
+}
+
+.sidebar-fruit {
+	padding-top: 4%;
+	font-size: 20px;
+	text-align: center;
+	color: green;
+}
+
+.make-green {
+	background-color: rgb(147, 233, 17);
+}
+
+.make-white {
+	color: white;
+}
+
+.panel > .panel-heading {
+	background-color: rgb(147, 233, 17);
+	color: rgb(147, 233, 17);
+	border-color: rgb(147, 233, 17);
+}
+
+.panel-color {
+	border-color: rgb(147, 233, 17);
+}
+
+.center-me {
+	text-align: center;
+}
+
+.side-button {
+	font-size: 16px;
+	text-align: center;
+	height: 10%;
+	margin-bottom: 2%;
+}
+
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
