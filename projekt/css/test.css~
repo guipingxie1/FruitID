@@ -160,7 +160,7 @@
 }
 
 #myModal .modal-dialog {
-	width: 24%;
+	width: 26%;
 }
 
 .tab {

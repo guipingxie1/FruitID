@@ -9,7 +9,7 @@ $info = array("Description/Taste",
 );
 
 echo "--------------------------------------------------------------------------------\n";
-$html = file_get_html('http://www.specialtyproduce.com/produce/Cranberries_210.php');
+$html = file_get_html('http://www.specialtyproduce.com/produce/Husked_Coconuts_943.php');
 $img = $html -> find('#prodPic', 0);
 $img_link = $img -> src;
 echo 'http://www.specialtyproduce.com/produce/' . $img_link . "\n";

@@ -43,7 +43,7 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
   <form class="navbar-form navbar-right" role="form" method="post" action="results.php">
     <div class="form-group">
-      <input type="text" class="form-control" name="query" id="query" placeholder="Your description here (ie shape, color, size, taste, location)">
+      <input type="text" class="form-control" name="query" id="query" placeholder="Your description here (ie shape, color, taste, location)">
       <button type="submit" name="search" value="search" class="btn btn-success nav-button">
         <span class="glyphicon glyphicon-search"></span> Search
       </button>
