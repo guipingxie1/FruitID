@@ -1,0 +1,346 @@
+{
+	"Acai" : { 
+		"description" : "",
+		"full" : "" 
+	},
+	"Akebi Fruit" : { 
+		"description" : "",
+		"full" : "" 
+	},
+	"Apricot" : { 
+		"description" : "",
+		"full" : "" 
+	},
+	"Asian Pear" : { 
+		"description" : "",
+		"full" : "" 
+	},
+	"Baby Banana" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Banana" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Bartlett Pear" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Bilva Fruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Black Currant" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Black Fig" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Black Plantain" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Blackberry" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Blue Crown Fruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Blueberry" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Bosc Pear" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Breadfruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Cantaloupe" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Cavaillon" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Cherimoya" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Cherry" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Clementine" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Concord Grape" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Cranberry" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Date" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Dragon Fruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Durian" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Egg Fruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Elderberry" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Feijoa" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Florida Avocado" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Fuji Apple" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Fuyu Persimmon" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Gac" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Gala Apple" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Gold Tamarillo" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Golden Delicious Apple" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Gooseberry" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Granny Smith Apple" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Grapefruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Green Fig" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Green Grape" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Guanabana" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Guava" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Hass Avocado" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Honeydew" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Husked Coconut" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Jack Fruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Jelly Palm" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Jujube" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Kiwi" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Lemon" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Lime" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Longan" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Loquat" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Lychee" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Mango" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Mangosteen" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Mexican Papaya" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Mulberry" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Nectarine" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Noni Fruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Orange" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Passionfruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Peach" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Pineapple" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Plum" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Pomegranate" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Pomelo" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Quince" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Raspberry" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Red Currant" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Red Delicious Apple" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Red Grape" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Red Tamarillo" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Sapodilla" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Sapote" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Seedless Watermelon" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Shea Fruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Snake Fruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Star Fruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Strawberry" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Sugar Apple" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Tangerine" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Tomatillo" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Ugli Fruit" : { 
+		"description" : "",
+		"full" : "" 
+		},
+	"Watermelon" : {
+		"description" : "",
+		"full" : "" 
+	}
+}
