@@ -17,4 +17,4 @@ for i in range(5):
 
 
 #This is the equivalent command line query
-# curl -XGET 'http://198.199.84.154:9200/fruit-index/_search' -d '{ "fields" : ["name"], "query": { "query_string" : {"default_field" : "description", "query": "large red" } } }'
+# curl -XGET 'http://198.199.84.154:9200/fruit-index/_search' -d '{ "fields" : ["name"], "query": { "query_string" : {"default_field" : "description", "query": ""query" : "large red and green" } } }'
