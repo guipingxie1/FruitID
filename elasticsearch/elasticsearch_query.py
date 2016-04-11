@@ -22,4 +22,7 @@ for i in range(5):
 
 
 #This is the equivalent command line query
-curl -XGET 'http://198.199.84.154:9200/fruit-index/_search' -d '{ "fields" : ["name"], "query": { "query_string" : {"default_field" : "description", "query": "large red and green" } } }'
+# curl -XGET 'http://198.199.84.154:9200/fruit-index/_search' -d '{ "fields" : ["name"], "query": { "query_string" : {"default_field" : "description", "query": "large red and green" } } }'
+
+#This query gets the full text of the passed in fruit. In this example it as an Acai. The name MUST be lowercase, as that is how it is stored within elasticsearch
+# curl -XGET 'http://198.199.84.154:9200/fruit-index/_search' -d '{ "query": {"term" : {"name" : "acai" }} }'
