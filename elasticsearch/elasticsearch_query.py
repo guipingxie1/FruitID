@@ -1,6 +1,11 @@
 import json
 from elasticsearch import Elasticsearch
 
+#import imp
+#elasticsearch = imp.load_source('elasticsearch', '/home/gxie2/gitHub/fruitID/elasticsearch')
+#elasticsearch.Elasticsearch()
+#from elasticsearch import Elasticsearch
+
 es = Elasticsearch(['198.199.84.154'])
 
 res = es.search(index='fruit-index', body={
@@ -17,4 +22,4 @@ for i in range(5):
 
 
 #This is the equivalent command line query
-# curl -XGET 'http://198.199.84.154:9200/fruit-index/_search' -d '{ "fields" : ["name"], "query": { "query_string" : {"default_field" : "description", "query": ""query" : "large red and green" } } }'
+curl -XGET 'http://198.199.84.154:9200/fruit-index/_search' -d '{ "fields" : ["name"], "query": { "query_string" : {"default_field" : "description", "query": "large red and green" } } }'
