@@ -8,32 +8,18 @@ if (isset($_GET['fruit']) && isset($_GET['query'])) {
   // check to see if anyone messed with it and return typo.php
   $fruit = ucfirst($_GET['fruit']);
   $fruit = str_replace('_', ' ', $fruit);					// make sure to str_replace ' ' to '_'
-  
-  $main_info = $query -> getMainInfo($fruit);
-  $description = $query -> getDes($fruit);
-  $input_query = 'red green seeds';
-  $result_query = $query -> getResult($input_query);
-  
-  $links_and_images = $main_info[0];
-  
-  $num_images = $links_and_images[1];
-  
-  $nutri['Calories'] = 0;
-  
-  if (strcmp($links_and_images[2], '.') != 0) {
-  	$nut = $query -> getNutri($links_and_images[2]);
-  	$nutri = $nut[0];
-  }
-/*
+  $nut = $query -> getNutri($fruit);
+  $nutri = $nut[0];
+
 	// parse fruit
 	$parsed_fruit = $fruit;
 	if (strpos($fruit, ' - ') != FALSE)
 		$parsed_fruit = trim(substr($fruit, 0, strpos($fruit, ' - ')));
-*/	
+	
   $query_flag = $_GET['query'];
   //echo $query_flag;
   
-  //$spec_produce_info = $query -> getSpecDes($links_and_images[3]);
+  $spec_produce_info = $query -> getSpecDes($fruit);
 }
 
 ?>
@@ -76,18 +62,16 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <div class="col-md-2 sidebar">
   <ul class="nav nav-sidebar side-font green-bar">
     <li><div class = "sidebar-fruit"> Your Results </div></li>
-    <?php
-    	for ($i = 0; $i < count($result_query); ++$i) {
-    		echo '<li><a href = "info.php?fruit=' . $result_query[$i] . '&query=true"> ' . $result_query[$i] . ' </a></li>';
-    	}
-    ?>
+    <li><a href = "info.php?fruit=apple&query=true"> Apple </a></li>
+    <li><a href = "info.php?fruit=banana&query=true"> Banana </a></li>
+    <li><a href = "info.php?fruit=cranberry&query=true"> Cranberry </a></li>
   </ul>
 
   <ul class="nav nav-sidebar side-font green-bar">
 	  <li><div class = "sidebar-fruit"> Related Fruits </div></li>
     <li><a href = "info.php?fruit=durian&query=false"> Durian </a></li>
-    <li><a href = "info.php?fruit=elderberry&query=false"> Elderberry </a></li>
-    <li><a href = "info.php?fruit=fuji_apple&query=false"> Fuji Apple </a></li>
+    <li><a href = "info.php?fruit=eugenia_uniflora&query=false"> Eugenia uniflora </a></li>
+    <li><a href = "info.php?fruit=ficus&query=false"> Ficus </a></li>
   </ul>
 
   <ul class="nav nav-sidebar small-side-font green-bar">
@@ -106,13 +90,7 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <!-- only get raw fruits -->
 
 <div class="col-md-7 col-md-offset-2 main">
-  <h3><?php if (strcmp($query_flag, 'true') == 0) {
-  				echo 'You searched for: "' . $input_query . '"'; 
-  				echo '<div class = "make-one-space"></div>'; 
-  				echo '<div class = "small-black-bar info-space"></div>';
-			}?>
-	</h3>		
-	
+  <h3><?php if (strcmp($query_flag, 'true') == 0) echo 'You searched for: Return Query' ?></h3>			<!-- const -->
   <p style="text-align:left">  
   	<span class = "fruit-name"><?php echo $fruit?></span> 
 	 	<span style="float:right">
@@ -127,15 +105,13 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <div class = "black-bar info-space"></div>
 
 	<?php
-	/*
 		$descript = $query -> getDes($parsed_fruit);
 		//echo $fruit . "\n";
 		for ($i = 0; $i < count($descript); ++$i)
 			echo '<p class = "descript-font">&emsp;&emsp;' . $descript[$i] . '</p>';
 
 		echo '<div class = "make-one-space"></div>';
-	*/
-	/*
+
 		for ($i = 1; $i < count($spec_produce_info); ++$i) {
 			if ($i % 3 == 1) {
 				echo '<div class = "make-one-space"></div>';
@@ -145,21 +121,6 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 				echo '<p class = "descript-font">' . $spec_produce_info[$i] . '</p>';
 			}
 		}
-	*/	
-		for ($i = 1; $i < count($description); ++$i) {
-			if ($i % 3 == 1) {
-				echo '<div class = "make-one-space"></div>';
-				echo '<span class = "big-text">' . $description[$i] . '</span>';
-			}
-			else {
-				echo '<p class = "descript-font">' . $description[$i] . '</p>';
-			}
-		}
-		/*	
-		for ($i = 1; $i < count($result_query); ++$i) {
-			echo '<p class = "descript-font">' . $result_query[$i] . '</p>';
-		}
-		*/
 	?>
 
   <footer class="footer">
@@ -168,12 +129,13 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </div>
 
 <div class="col-md-3 col-md-offset-9 right-sidebar-image">
-  <?php /* $images = $query -> getImages($parsed_fruit); 
-  for ($i = 0; $i < count($images); ++$i) {?> */ 	
-  for ($i = 0; $i < $num_images; ++$i) {?>
-  <img src = "<?php echo $links_and_images[$i + 4]?>" width="80%" alt = "ERROR" class = "img-rounded img-responsive center-me push-right">
+  <?php $images = $query -> getImages($parsed_fruit); 
+  for ($i = 0; $i < count($images); ++$i) {?> 
+  <img src = "<?php echo $images[$i]?>" width="80%" alt = "ERROR" class = "img-rounded img-responsive center-me push-right">
   <div class = "image-space"></div>
   <?php } ?>
+  <img src = "<?php echo $spec_produce_info[0]?>" width="80%" alt = "ERROR" class = "img-rounded img-responsive center-me push-right">
+  <div class = "image-space"></div>
 </div>
 
 

@@ -112,7 +112,6 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   				echo '<div class = "small-black-bar info-space"></div>';
 			}?>
 	</h3>		
-	
   <p style="text-align:left">  
   	<span class = "fruit-name"><?php echo $fruit?></span> 
 	 	<span style="float:right">

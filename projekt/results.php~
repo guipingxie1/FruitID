@@ -65,7 +65,7 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   </ul>
 </div>
 
-<div class="col-md-8 col-md-offset-2 main">
+<div class="col-md-7 col-md-offset-2 main">
   <h3><?php 
   				echo 'You searched for: "' . $input_query . '"'; 
   				echo '<div class = "make-one-space"></div>'; 

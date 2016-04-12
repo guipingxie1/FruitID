@@ -60,7 +60,7 @@ class Query {
 */
 
 	public function getDes($fruit) {
-		return $this -> elasticdb -> getDescript($fruit);
+		return $this -> elasticdb -> getDes($fruit);
 	}	
 	
 	public function getResult($query) {

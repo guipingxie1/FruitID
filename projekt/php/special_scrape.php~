@@ -42,8 +42,7 @@ class SpecialProduce {
 			
 		//echo count($arr);	
 		//print_r($arr);
-/*		
-		// thank you stackoverflow
+		
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, 'http://198.199.84.154:9200/fruit-index/_search');
 		curl_setopt($ch, CURLOPT_POSTFIELDS, '{ "query": {"term" : {"name" : "' . $fruit . '" }} }'); 
@@ -52,7 +51,7 @@ class SpecialProduce {
 		$result= curl_exec($ch);
 		//print_r($ch);
 		curl_close ($ch);
-*/		
+		
 		return $arr;
 	}
 }

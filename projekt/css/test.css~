@@ -115,7 +115,7 @@
 }
 
 .small-black-bar {
-	border-top: 2px solid black;
+	border-top: 5px solid black;
 }
 
 .results-font {

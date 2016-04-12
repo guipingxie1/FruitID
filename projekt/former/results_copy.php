@@ -3,9 +3,6 @@ require_once('php/query.php');
 
 $query = new Query();
 
-$input_query = 'red green seeds';
-$result_query = $query -> getResult($input_query);
-
 ?>
 
 <!DOCTYPE html>
@@ -44,16 +41,13 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <!-- Sidebar -->
 <div class="col-sm-3 col-md-2 sidebar">
-<!--
-  <ul class="nav nav-sidebar side-font green-bar"> 
+  <ul class="nav nav-sidebar side-font green-bar">
   	<li><div class = "sidebar-fruit"> Your Results </div></li>
-    <?php
-    	for ($i = 0; $i < count($result_query); ++$i) {
-    		echo '<li><a href = "info.php?fruit=' . $result_query[$i] . '&query=true"> ' . $result_query[$i] . ' </a></li>';
-    	}
-    ?>
+    <li><a href = "info.php?fruit=apricot&query=true"> Apricot </a></li>
+    <li><a href = "info.php?fruit=banana&query=true"> Banana </a></li>
+    <li><a href = "info.php?fruit=cranberry&query=true"> Cranberry </a></li>
   </ul>
--->  
+  
   <ul class="nav nav-sidebar small-side-font green-bar">
   	<li><div class = "sidebar-fruit"> All Fruits </div></li>
     <?php
@@ -65,25 +59,13 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   </ul>
 </div>
 
-<div class="col-md-8 col-md-offset-2 main">
-  <h3><?php 
-  				echo 'You searched for: "' . $input_query . '"'; 
-  				echo '<div class = "make-one-space"></div>'; 
-  				echo '<div class = "small-black-bar info-space"></div>';
-			?>
-	</h3>
-	
-  <h2> Your Results </h2>
-  <div class = "black-bar make-space"></div>
-  <?php
-    	for ($i = 0; $i < count($result_query); ++$i) {
-    		echo '<div class = "make-one-space results-font"><a href = "info.php?fruit=' . $result_query[$i] . '&query=true"> ' . $result_query[$i] . ' </a></div>';
-    		
-    		$description = $query -> getDes($result_query[$i]);
-    		echo '<div class = "small-tab make-one-space"> ' . $description[2] . ' </div>';
-    	}
-  ?>
-<!--  
+<!-- Website: https://en.wikipedia.org/wiki/FRUIT_NAME
+							https://ndb.nal.usda.gov/ndb/foods?format=&count=&max=35&sort=&fgcd=Fruits+and+Fruit+Juices&manu=&lfacet=&qlookup=&offset=NUMBER_35MOD&order=desc -->
+<!-- only get raw fruits -->
+
+<div class="col-md-7 col-md-offset-2 main">
+  <h3> Return Query </h3>			<!-- const -->
+  <h2> Links </h2>
   <div class = "make-one-space black-bar make-one-space"></div>
  	<div class = "make-one-space results-font"><a href = "info.php?fruit=apricot&query=true"> Apricot </a></div>
  	<div class = "small-tab make-one-space"> Small Description </div>
@@ -91,7 +73,7 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <div class = "small-tab make-one-space"> Small Description </div>
   <div class = "make-one-space results-font"><a href = "info.php?fruit=cranberry&query=true"> Cranberry </a></div>
   <div class = "small-tab make-one-space"> Small Description </div>
--->
+
 
   <footer class="footer">
     <p>&copy; 2016 FruitID</p>
