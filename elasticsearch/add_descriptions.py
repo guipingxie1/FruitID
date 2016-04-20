@@ -46,10 +46,12 @@ split = out.split(" ")
 out_dict = {}
 for i in split:
 	if i not in stopwords:
-		out_dict[i] = 1
+		if i in out_dict:
+			out_dict[i] += 1
+		else:
+			out_dict[i] = 1
 
 with open('conflict_resolution', 'w') as cr:
 	for i in out_dict:
-		cr.write(i + "\n")
-
-
+		if out_dict[i] > 1:
+			cr.write(i + "\n")
