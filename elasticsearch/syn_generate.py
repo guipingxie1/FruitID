@@ -31,7 +31,7 @@ for word in synonyms:
 		all_syns.append(formatSyn(word, synonyms[word]))
 
 with open("synonyms.txt", "w") as text_file:
-	syn_string = ", ".join(all_syns)
+	syn_string = "|".join(all_syns)
 	text_file.write(syn_string)
 
 #\"type\": \"synonym\", \"synonyms\": [ \"large,big\",\"small,tiny\"
