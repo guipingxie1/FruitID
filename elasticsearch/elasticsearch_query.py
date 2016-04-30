@@ -13,7 +13,7 @@ res = es.search(index='fruit-index3', body={
 		"query_string" : {
 			"default_field" : "description",
 			"fuzziness" : 2,
-			"query" : "large",
+			"query" : "bigs",
 			"analyzer" : "remove"
 		}
 	}
