@@ -5,7 +5,9 @@ class ReturnResult {
 	public function resultArr($query) {		
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, 'http://198.199.84.154:9200/fruit-index/_search');
-		curl_setopt($ch, CURLOPT_POSTFIELDS, '{ "fields" : ["name"], "query": { "query_string" : {"default_field" : "description", "query": "' . $query . '" } } }');
+		//curl_setopt($ch, CURLOPT_POSTFIELDS, '{ "fields" : ["name"], "query": { "query_string" : {"default_field" : "description", "query": "' . $query . '" } } }');
+		//curl_setopt($ch, CURLOPT_POSTFIELDS, '{ "fields" : ["name"], "query": { "query_string" : {"default_operator" : "AND", "default_field" : "description", "fuzziness" : 2, "analyzer" : "remove", "query": "' . $query . '" } } }');
+		curl_setopt($ch, CURLOPT_POSTFIELDS, '{ "fields" : ["name"], "query": { "query_string" : {"default_field" : "description", "fuzziness" : 2, "analyzer" : "remove", "query": "' . $query . '" } } }');
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		$result = curl_exec ($ch);
@@ -32,4 +34,3 @@ class ReturnResult {
 }
 
 ?>
-

@@ -26,15 +26,15 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <h2> Welcome to FruitID. Type your query below </h2>
   <div class = "make-space"></div>
   <!-- role = search -->
-  <form class="form-horizontal" role="form" method="post" action="results.php"> 
+  <form class="form-horizontal" method="get" action="results.php"> 
     <div class="form-group">
-      <input type="text" class="main-search form-control" name="query" id="query" placeholder="Your description here (ie shape, color, size, taste, location)">
+      <input type="text" class="main-search form-control" name="search" placeholder="Your description here (ie shape, color, size, taste, location)">
+    </div> 
       <!-- <i class = "glyphicon glyphicon-search form-control-feedback light-grey"></i> -->
-      <div class = "make-more-space"></div>
-      <button type="submit" name="search" value="search" class="btn make-green big-button">
-        <span class="glyphicon glyphicon-search"></span> Search
-      </button>
-    </div>
+    <div class = "make-more-space"></div>
+    <button type="submit" value="submit" class="btn make-green big-button">
+      <span class="glyphicon glyphicon-search"></span> Search
+    </button>
   </form>
 </div>
 

@@ -2,6 +2,7 @@
 require_once('connect.php');
 require_once('elastic_db.php');
 require_once('return_result.php');
+require_once('Conflict.php');
 //require_once('image_scrape.php');
 //require_once('wiki_scrape.php');
 //require_once('special_scrape.php');
@@ -16,6 +17,7 @@ class Query {
 	var $main_info;
 	var $elasticdb;
 	var $query_res;
+	var $conflict_res;
 	
 	// constructor
 	public function __construct() {
@@ -23,6 +25,7 @@ class Query {
 		//$this -> wiki = new Wiki();
 		//$this -> images = new Images();
 		//$this -> spec_prod = new SpecialProduce();
+		$this -> conflict_res = new Conflict();
 		$this -> elasticdb = new ElasticDB();
 		$this -> query_res = new ReturnResult();
 		$this -> fruit_name = $this -> connect -> con -> prepare( 'SELECT Name FROM Main_Fruits' );
@@ -72,6 +75,11 @@ class Query {
 		$this -> main_info -> execute();
 		$link_and_image = $this -> main_info -> fetchAll();
 		return $link_and_image;
+	}
+	
+	public function editDistance($query) {
+		$edit_dist = $this -> conflict_res -> conflict_res($query);
+		return $edit_dist;
 	}
 }
 

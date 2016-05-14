@@ -4,15 +4,19 @@ require_once('php/query.php');
 $query = new Query();
 
 // must be true unless someone manually types in stuff
-if (isset($_GET['fruit']) && isset($_GET['query'])) {
+if ( isset($_GET['fruit']) && isset($_GET['query']) ) {
   // check to see if anyone messed with it and return typo.php
   $fruit = ucfirst($_GET['fruit']);
-  $fruit = str_replace('_', ' ', $fruit);					// make sure to str_replace ' ' to '_'
   
   $main_info = $query -> getMainInfo($fruit);
   $description = $query -> getDes($fruit);
-  $input_query = 'red green seeds';
-  $result_query = $query -> getResult($input_query);
+  
+  if (isset($_GET['search'])) {
+  	$input_query = htmlspecialchars($_GET['search']);
+		$input_query = trim($input_query);
+		$input_query = preg_replace("/[^a-z]+/", " ", $input_query);	
+		$result_query = $query -> getResult($input_query);
+  }
   
   $links_and_images = $main_info[0];
   
@@ -24,17 +28,25 @@ if (isset($_GET['fruit']) && isset($_GET['query'])) {
   	$nut = $query -> getNutri($links_and_images[2]);
   	$nutri = $nut[0];
   }
-/*
-	// parse fruit
-	$parsed_fruit = $fruit;
-	if (strpos($fruit, ' - ') != FALSE)
-		$parsed_fruit = trim(substr($fruit, 0, strpos($fruit, ' - ')));
-*/	
+
   $query_flag = $_GET['query'];
-  //echo $query_flag;
-  
-  //$spec_produce_info = $query -> getSpecDes($links_and_images[3]);
+   
+  $related_query = "";
+  $related_query = $related_query . $fruit . " ";
+	$related_query = $related_query . $description[2] . " ";
+	$related_query = $related_query . $description[ count($description) - 1 ];	
+	$related_query = htmlspecialchars($related_query);
+	$related_query = trim($related_query);
+	$related_query = strtolower($related_query);
+	$related_query = preg_replace("/[^a-z]+/", " ", $related_query);
+	
+	$related_fruit = $query -> getResult($related_query);
 }
+else {
+	header( "Location: typo.php" ); 
+	exit();
+}
+
 
 ?>
 
@@ -62,10 +74,10 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         class="glyphicon glyphicon-home make-white"></span> FruitID</a>
   </div>
 
-  <form class="navbar-form navbar-right" role="form" method="post" action="results.php">
+  <form class="navbar-form navbar-right" method="get" action="results.php">
     <div class="form-group">
-      <input type="text" class="form-control" name="query" id="query" placeholder="Your description here (ie shape, color, size, taste, location)">
-      <button type="submit" name="search" value="search" class="btn btn-success nav-button">
+      <input type="text" class="form-control" name="search" placeholder="Your description here (ie shape, color, size, taste, location)">
+      <button type="submit" value="submit" class="btn btn-success nav-button">
         <span class="glyphicon glyphicon-search"></span> Search
       </button>
     </div>
@@ -74,20 +86,27 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <!-- Sidebar -->
 <div class="col-md-2 sidebar">
-  <ul class="nav nav-sidebar side-font green-bar">
-    <li><div class = "sidebar-fruit"> Your Results </div></li>
-    <?php
-    	for ($i = 0; $i < count($result_query); ++$i) {
-    		echo '<li><a href = "info.php?fruit=' . $result_query[$i] . '&query=true"> ' . $result_query[$i] . ' </a></li>';
-    	}
-    ?>
-  </ul>
+	<?php 
+	if ( count($result_query) > 0 ) { 
+		echo '<ul class="nav nav-sidebar side-font green-bar">';
+		echo '<li><div class = "sidebar-fruit"> Your Results </div></li>'; 
 
+  	for ($i = 0; $i < count($result_query); ++$i) {
+  		echo '<li><a href = "info.php?fruit=' . $result_query[$i] . '&query=true&search=' . $input_query . '"> ' . $result_query[$i] . ' </a></li>';
+  	}  
+	  	
+		echo '</ul>';
+  } ?>
+
+	<!-- TO DO -->
   <ul class="nav nav-sidebar side-font green-bar">
 	  <li><div class = "sidebar-fruit"> Related Fruits </div></li>
-    <li><a href = "info.php?fruit=durian&query=false"> Durian </a></li>
-    <li><a href = "info.php?fruit=elderberry&query=false"> Elderberry </a></li>
-    <li><a href = "info.php?fruit=fuji_apple&query=false"> Fuji Apple </a></li>
+	  <?php
+	  	for ( $i = 0; $i < min(5, count($related_fruit)); ++$i ) {
+	  		if ( strcmp($related_fruit[$i], $fruit) != 0 ) 
+	  			echo '<li><a href = "info.php?fruit=' . $related_fruit[$i] . '&query=false"> ' . $related_fruit[$i] . ' </a></li>';
+	  	}
+	  ?>
   </ul>
 
   <ul class="nav nav-sidebar small-side-font green-bar">
@@ -126,26 +145,7 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <div class = "info-space"></div>
   <div class = "black-bar info-space"></div>
 
-	<?php
-	/*
-		$descript = $query -> getDes($parsed_fruit);
-		//echo $fruit . "\n";
-		for ($i = 0; $i < count($descript); ++$i)
-			echo '<p class = "descript-font">&emsp;&emsp;' . $descript[$i] . '</p>';
-
-		echo '<div class = "make-one-space"></div>';
-	*/
-	/*
-		for ($i = 1; $i < count($spec_produce_info); ++$i) {
-			if ($i % 3 == 1) {
-				echo '<div class = "make-one-space"></div>';
-				echo '<span class = "big-text">' . $spec_produce_info[$i] . '</span>';
-			}
-			else {
-				echo '<p class = "descript-font">' . $spec_produce_info[$i] . '</p>';
-			}
-		}
-	*/	
+	<?php	
 		for ($i = 1; $i < count($description); ++$i) {
 			if ($i % 3 == 1) {
 				echo '<div class = "make-one-space"></div>';
@@ -155,11 +155,6 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 				echo '<p class = "descript-font">' . $description[$i] . '</p>';
 			}
 		}
-		/*	
-		for ($i = 1; $i < count($result_query); ++$i) {
-			echo '<p class = "descript-font">' . $result_query[$i] . '</p>';
-		}
-		*/
 	?>
 
   <footer class="footer">
@@ -168,8 +163,7 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </div>
 
 <div class="col-md-3 col-md-offset-9 right-sidebar-image">
-  <?php /* $images = $query -> getImages($parsed_fruit); 
-  for ($i = 0; $i < count($images); ++$i) {?> */ 	
+  <?php 
   for ($i = 0; $i < $num_images; ++$i) {?>
   <img src = "<?php echo $links_and_images[$i + 4]?>" width="80%" alt = "ERROR" class = "img-rounded img-responsive center-me push-right">
   <div class = "image-space"></div>

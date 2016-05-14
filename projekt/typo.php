@@ -3,17 +3,7 @@ require_once('php/query.php');
 
 $query = new Query();
 
-// must be true unless someone manually types in stuff
-if (isset($_GET['fruit']) && isset($_GET['query'])) {
-  // check to see if anyone messed with it and return typo.php
-  $fruit = ucfirst($_GET['fruit']);
-  $fruit = str_replace('_', ' ', $fruit);					// make sure to str_replace ' ' to '_'
-  $nut = $query -> getNutri($fruit);
-  $nutri = $nut[0];
 
-  $query_flag = $_GET['query'];
-  //echo $query_flag;
-}
 
 ?>
 
@@ -41,10 +31,10 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         class="glyphicon glyphicon-home make-white"></span> FruitID</a>
   </div>
 
-  <form class="navbar-form navbar-right" role="form" method="post" action="results.php">
+  <form class="navbar-form navbar-right" method="get" action="results.php">
     <div class="form-group">
-      <input type="text" class="form-control" name="query" id="query" placeholder="Your description here (ie shape, color, size, taste, location)">
-      <button type="submit" name="search" value="search" class="btn btn-success nav-button">
+      <input type="text" class="form-control" name="search" placeholder="Your description here (ie shape, color, size, taste, location)">
+      <button type="submit" value="submit" class="btn btn-success nav-button">
         <span class="glyphicon glyphicon-search"></span> Search
       </button>
     </div>
@@ -68,15 +58,8 @@ href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
                                                         https://ndb.nal.usda.gov/ndb/foods?format=&count=&max=35&sort=&fgcd=Fruits+and+Fruit+Juices&manu=&lfacet=&qlookup=&offset=NUMBER_35MOD&order=desc -->
 <!-- only get raw fruits -->
 
-<div class="col-md-5 col-md-offset-2 main">
-  <h3><?php if (strcmp($query_flag, 'true') == 0) echo 'You searched for: Return Query' ?></h3>			<!-- const -->
-  <h2><?php echo $fruit ?></h2> 
-  <div class = "info-space"></div>
-  <div class = "black-bar info-space"></div>
-  
-  <h4> Description </h4>
-
-	
+<div class="col-md-7 col-md-offset-2 main">
+  <h2> You made a wrong turn </h2>
 
   <footer class="footer">
     <p>&copy; 2016 FruitID</p>

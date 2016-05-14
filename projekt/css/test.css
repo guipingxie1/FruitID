@@ -19,7 +19,7 @@
 }
 
 .navbar-form .form-control {
-	width: 400px;
+	width: 500px;
 	height: 40px;
 }
 
@@ -72,6 +72,10 @@
 	width: 500px;
 }
 
+.inline-me {
+	display: inline-block;
+}
+
 .side-font {
 	font-size: 18px;
 }
@@ -95,7 +99,7 @@
 }
 
 .small-tab {
-	padding-left: 5%;
+	padding-left: 1%;
 }
 
 .nutrition-title {
